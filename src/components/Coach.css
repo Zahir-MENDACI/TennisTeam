@@ -1,0 +1,39 @@
+.Coach
+{
+    width: 100%;
+    min-height: 100%;
+    background: linear-gradient(90deg, #1c1c1c 50%, #e6e6e6 50%);
+    padding: 30vh 0;
+}
+
+.card
+{
+    margin: auto;
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div
+{
+    width: 33%;
+}
+.imgC
+{
+    margin: auto;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: 5vh;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+}
+.p
+{
+    color: black;
+    margin: 5vh auto;
+    width: 20vw;
+    line-height: 1em;
+}

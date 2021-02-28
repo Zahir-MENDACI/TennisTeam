@@ -1,0 +1,34 @@
+.Home
+{
+    background-image: url(../images/moises-alex-WqI-PbYugn4-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 100%;
+
+
+    img
+    {
+        width: 100%;
+    }
+    .btndiv
+    {
+        display: inline-block;
+        margin-top: 50vh;
+
+        .button
+        {
+            margin: 15vh 50px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 13vw;
+            height: 7vh;
+            border: none;
+        }
+        .button:hover 
+        {
+            background-color: black;
+            color: white;
+        }
+    }
+}

@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Banner from './components/Banner';
+import Navbar from './components/Navbar.js';
+import Footer from './components/Footer.js';
+import Abonnement from './pages/Abonnement.js';
+import Coach from './pages/Coach.js';
+import Connexion from './pages/Connexion';
+import photo from './photo.jpg';
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+import Home from './pages/Home';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/Abonnement" exact component={Abonnement} />
+        <Route path="/Coach" exact component={Coach} />
+        <Route path="/Connexion" exact component={Connexion} />
+      </Switch>
+    </BrowserRouter>
+    
+
+    // <div className="App">
+      
+    //   <Navbar />
+    //   {/* page d'abonnement */}
+    //   {/* <Abonnement /> */}
+
+      // {/* page D'acceuil */}
+      // {/* <div class="btndiv">
+      //   <button class="button">S'inscrire à un cours</button>
+      //   <button class="button">Prendre un abonnement</button>
+      // </div> */}
+
+    //   {/* page des Coach */}
+    //    <Coach />
+    //   <Footer />
+    // </div>
   );
 }
 
