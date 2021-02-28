@@ -14,6 +14,7 @@
 
 		ul{
 			display: flex;
+			padding: 0;
 
 			li{
 				list-style: none;
@@ -49,11 +50,16 @@
 
 				a{
 					padding: 1rem 0;
-					margin: 0 3rem;
+					margin: 0 4vw;
+					@media screen and (max-width: 850px)
+					{
+						margin: 0 2vw;
+					}
 					position: relative;
 					letter-spacing: 2px;
 					text-decoration: none;
 					color: #eee;
+					white-space:nowrap;
 
 
 					&:last-child{

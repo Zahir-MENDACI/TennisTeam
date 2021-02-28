@@ -4,31 +4,61 @@
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    min-height: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
 
-
-    img
-    {
-        width: 100%;
-    }
     .btndiv
     {
-        display: inline-block;
-        margin-top: 50vh;
+        display: flex;
+        column-gap: 20px;
 
+        position: absolute;
+        bottom: 20vh;
         .button
         {
-            margin: 15vh 50px;
             background: rgba(0, 0, 0, 0.6);
             color: white;
-            width: 13vw;
+            width: 16vw;
             height: 7vh;
             border: none;
+            @media (max-width:1040px)
+            {
+                width: 20vw;
+            }
+            @media (max-width:850px)
+            {
+                width: 25vw;
+            }
+            @media (max-width:700px)
+            {
+                width: 30vw;
+            }
         }
-        .button:hover 
+        @media (max-width:550px)
         {
-            background-color: black;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            .button
+             {
+                 width: 40vw;
+                @media (max-width:470px)
+                {
+                    width: 50vw;
+                }
+                @media (max-width:400px)
+                {
+                    width: 60vw;
+                }
+            }
+        }
+            .button:hover 
+            {
+                background-color: black;
+                color: white;
         }
     }
 }
