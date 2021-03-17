@@ -5,6 +5,7 @@ import Footer from './components/Footer.js';
 import Abonnement from './pages/Abonnement.js';
 import Coach from './pages/Coach.js';
 import Connexion from './pages/Connexion';
+import Planning from './pages/Planning';
 import photo from './photo.jpg';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Home from './pages/Home';
@@ -15,9 +16,10 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/Abonnement" exact component={Abonnement} />
-        <Route path="/Coach" exact component={Coach} />
-        <Route path="/Connexion" exact component={Connexion} />
+        <Route path="/abonnement" exact component={Abonnement} />
+        <Route path="/coach" exact component={Coach} />
+        <Route path="/connexion" exact component={Connexion} />
+        <Route path="/planning" exact component={Planning} />
       </Switch>
     </BrowserRouter>
     

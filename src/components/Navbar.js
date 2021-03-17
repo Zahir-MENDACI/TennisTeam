@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 // https://reactrouter.com/web/example/basic
-import './Navbar.scss';
 import { ReactComponent as CloseMenu } from "../images/x.svg";
 import { ReactComponent as MenuIcon } from "../images/menu.svg";
 import {NavLink} from "react-router-dom"
