@@ -4,19 +4,55 @@ import Footer from '../components/Footer';
 //import Footer from '../Acceuil/Footer';
 import Banner from '../Acceuil/Banner';
 import Info from '../Acceuil/Info';
-import Coach from '../Acceuil/Coach';
+import Coach from './Coach';
+import photo1 from '..//images/image (3).jfif';
 
 
 const Home = () => {
+    const d = new Date()
     return (
         <>
             <Navbar/>
-            <div className="Home">
-                <div class="btndiv">
-                    <button class="button">S'inscrire à un cours</button>
-                    <button class="button">Prendre un abonnement</button>
+                <div className="Home">
+                    <div class="btndiv">
+                        <button class="button">S'inscrire à un cours</button>
+                        <button class="button">Prendre un abonnement</button>
+                    </div>
                 </div>
-            </div>
+
+                <div className="CoachHome">
+                    <h1>Tennis Team</h1>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero error veniam porro sint, cupiditate dolore odio. Cumque expedita perferendis ea. Quam molestiae atque deleniti neque incidunt eaque laborum est vero!
+                    </div>
+                    <div className="coachs">
+                        <div className="div">
+                            <img src={photo1}/>
+                            <h2>NOM Prenom</h2>
+                        </div> 
+                        <div className="div">
+                            <img src={photo1}/>
+                            <h2>NOM Prenom</h2>
+                        </div> 
+                    </div>
+                    <p>Plus de details</p>
+                </div>
+                
+                <div className="planningHome">
+                    <h1>Evenements</h1>
+                    <div className="content">
+                        <div className="today">
+                            <h3>Aujourd'hui le {`${d.getDate()}/${d.getMonth()}/${d.getFullYear()}:`}</h3>
+                            <p>--Evenement d'aujourd'hui--</p>
+                        </div>
+                        <div className="later">
+                            <h3>Prochain evenement le {`${d.getDate()+2}/${d.getMonth()}/${d.getFullYear()}:`}</h3>
+                            <p>--Le prochain evenement--</p>
+                        </div>
+                    </div>
+                    <p className="plus">Plus de details</p>
+                </div>
+
             <Footer />
                 {/* <Banner />
                 <Info />

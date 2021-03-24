@@ -9,10 +9,13 @@ import dateFns from "date-fns";
 
 const Planning = () => {
     return (
-        <div className="App">
-
-            <Calendar />
-        </div>
+        <>
+            <Navbar/>
+            <div className="Planning">
+                <Calendar />
+            </div>
+            <Footer/>
+        </>
     )
 };
 

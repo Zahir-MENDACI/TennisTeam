@@ -4,7 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    min-height: 100vh;
+    Height: 90vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@
         column-gap: 20px;
 
         position: absolute;
-        bottom: 20vh;
+        bottom: 15vh;
         .button
         {
             background: rgba(0, 0, 0, 0.6);

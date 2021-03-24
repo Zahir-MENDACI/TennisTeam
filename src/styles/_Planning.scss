@@ -1,9 +1,17 @@
-/*
+.Planning
+{
+  height: 90vh;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 10vh 0;
+}
 
-Created by Matej Kovac
-http://moodydev.io
-
-*/
+* {
+  box-sizing: border-box;
+}
 
 /* FONT IMPORTS */
 
@@ -39,55 +47,12 @@ http://moodydev.io
   --neutral-color: #fff;
 }
 
-/* GENERAL */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--text-color);
-  background: var(--bg-color);
-}
-
-header {
-  display: block;
-  width: 100%;
-  padding: 1.75em 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--neutral-color);
-}
-
-header #logo {
-  font-size: 175%;
-  text-align: center;
-  color: var(--main-color);
-  line-height: 1;
-}
-
-header #logo .icon {
-  padding-right: 0.25em;
-}
-
-main {
-  display: block;
-  margin: 0 auto;
-  margin-top: 5em;
-  max-width: 50em;
-}
-
-
-
 /* Calendar */
 
 .calendar {
   display: block;
   position: relative;
-  width: 100%;
+  width: 80%;
   background: var(--neutral-color);
   border: 1px solid var(--border-color);
 
@@ -96,7 +61,11 @@ main {
     font-weight: 700;
     font-size: 115%;
     padding: 1.5em 0;
+    height: 60px;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     .icon {
       cursor: pointer;
@@ -121,10 +90,14 @@ main {
   .days {
     text-transform: uppercase;
     font-weight: 400;
-    color: var(--text-color-light);
+    color: #000;
     font-size: 70%;
     padding: 0.75em 0;
     border-bottom: 1px solid var(--border-color);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .body 
@@ -138,16 +111,13 @@ main {
       cursor: pointer;
       background: var(--neutral-color);
       transition: 0.25s ease-out;
+      display: flex;
 
       &:hover 
       {
         background: var(--bg-color);
         transition: 0.5s ease-out;
-        .bg 
-        {
-          opacity: 0.05;
-          transition: 0.5s ease-in;
-        }
+
       }
       &:last-child 
       {
@@ -165,27 +135,23 @@ main {
 
       .bg 
       {
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
         color: var(--main-color);
         opacity: 0;
-        font-size: 8em;
-        position: absolute;
-        top: -0.2em;
-        right: -0.05em;
+        font-size: 5em;
+        margin: auto;
         transition: 0.25s ease-out;
         letter-spacing: -0.07em;
       }
     }
     .selected 
     {
-      border-left: 10px solid transparent;
-      border-image: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
-      border-image-slice: 1;
+      border: 3px solid #1d9cbf;
+      
       .bg 
       {
         opacity: 0.05;
-        transition: 0.5s ease-in;
       }
     }
     .row 
@@ -251,14 +217,82 @@ main {
 
   .indice
   {
-    width: 20px;
-    height: 20px;
-    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #1d9cbf;
     position: absolute;
-    bottom: 0;
+    top: 0.5em;
+    left: 0.3em;
   }
 }
 
+.showInfos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.507);
+  animation: popup .3s ease forwards ;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .infosContent {
+    position: relative;
+    
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    color: #FFF;
+    background: #333;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 10px 10px #333;
+    animation: popup .6s ease forwards;
+    transform: scale(0);
+    transform-origin: center;
+
+    @keyframes popup {
+      to {
+        transform: scale(1);
+      } 
+    }
+  }
+  .head {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+  }
+  h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .button {
+    cursor: pointer;
+    color: #000;
+    background: #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: .2s;
+
+    &:hover {
+      background: #1d9cbf;
+    }
+  }
+  .text {
+    text-align: justify;
+    padding-bottom: 1rem;
+  }
+  .return {
+    margin: 1rem auto;
+    width: 200px;
+  }
+}
 
 
 
