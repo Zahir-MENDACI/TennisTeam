@@ -1,0 +1,21 @@
+.contenu
+{
+    // font-size: 20px;
+    // text-align: justify;
+    
+    color: #333;
+    background: #F1F1F1;
+    transition: all 0.2 ease-in-out;
+}
+
+.contenu.dark
+{
+    color: #F1F1F1;
+    background: #333;
+}
+
+.contenu.light
+{
+    color: #333;
+    background: #F1F1F1;
+}

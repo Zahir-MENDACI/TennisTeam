@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Calendar from '../components/Calendar';
-import 'react-calendar/dist/Calendar.css';
+// import 'react-calendar/dist/Calendar.css';
+import { ThemeContext } from '../config/Context/ThemeContext';
 
 import dateFns from "date-fns";
 
 
 const Planning = () => {
+    const {theme} = useContext(ThemeContext) 
     return (
-        <>
+        <div className={theme ? "contenu light" : "contenu dark"}>
             <Navbar/>
             <div className="Planning">
                 <Calendar />
             </div>
             <Footer/>
-        </>
+        </div>
     )
 };
 

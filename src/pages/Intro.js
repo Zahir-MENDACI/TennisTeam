@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import Lottie from 'react-lottie-player'
 import lottieJson from '../Intro.json';

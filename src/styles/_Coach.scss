@@ -2,31 +2,40 @@
 {
     width: 100%;
     min-height: 100%;
-    background: linear-gradient(90deg, #1c1c1c 50%, #e6e6e6 50%);
-    padding: 20vh 0;
+    // background: linear-gradient(90deg, #1c1c1c 50%, #e6e6e6 50%);
+    padding: 3% 0;
+    display: flex;
+    justify-content: center;
 
-    .card
+    .cardsContainer
     {
-        margin: auto;
-        width: 80vw;
-        height: auto;
+        // margin: auto;
+        // width: 80vw;
+        // height: auto;
         display: flex;
-        flex-direction: row;
+        // flex-direction: row;
         flex-wrap: wrap;
-        background-color: #FFF;
+        column-gap: 30px;
+        row-gap: 40px;
+        justify-content: center;
+        // background-color: #FFF;
 
-        .div
+        .card
         {
-            width: 33%;
+            width: 30%;
             text-align: center;
+            // border: 1px solid #000;
+            border-radius: 20px;
+            box-shadow: 0px 18px 20px 0px rgba(0, 0, 0, 0.8);
         }
         img
         {
             margin: auto;
             border-radius: 50%;
             margin-top: 5vh;
-            width: 150px;
-            height: 150px;
+            width: 50%;
+            // height: 150px;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.8);
         }
         p
         {
@@ -38,9 +47,9 @@
     @media (max-width:850px)
     {
 
-        .div
+        .card
         {
-            width: 50%;
+            width: 45%;
         }
         p
         {
@@ -49,11 +58,10 @@
     }
 
     @media (max-width:600px)
-    {
-        flex-direction: column;   
-        .div
+    { 
+        .card
         {
-            width: 100%;
+            width: 90%;
         }
         p
         {
@@ -62,64 +70,4 @@
 
     }
 }
-}
-
-.CoachHome
-{
-    width: 100%;
-    padding: 5vh 10vw;
-
-    .coachs
-    {
-        display: flex;
-        justify-content: center;
-        div
-        {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            margin-top: 5vh;
-            img
-            {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-            } 
-        }
-    }
-    p
-    {
-        position: absolute;
-        right: 5vw;
-    }
-}
-
-.planningHome
-{
-    padding: 5%;
-    .content
-    {
-        display: flex;
-        justify-content: space-evenly;
-        div
-        {
-            width: 40%;
-            box-shadow: 5px 2px 2px rgb(104, 102, 102);
-        }
-    }
-    .plus
-    {
-        position: absolute;
-        right: 5vw;
-    }
-
-    &::before
-    {
-        content: "";
-        position: absolute;
-        height: 1px;
-        width: 90%;
-        background-color: #535353;
-        display: inline-block;
-    }
 }

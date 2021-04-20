@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 //import Footer from '../Acceuil/Footer';
@@ -6,19 +6,26 @@ import Banner from '../Acceuil/Banner';
 import Info from '../Acceuil/Info';
 import Coach from './Coach';
 import photo1 from '..//images/image (3).jfif';
+import { NavLink, useHistory } from 'react-router-dom';
+import { ThemeContext } from '../config/Context/ThemeContext';
+
 
 
 const Home = () => {
     const d = new Date()
+    const history = useHistory()
+    const {theme} = useContext(ThemeContext) 
     return (
-        <>
+        <div className={theme ? "contenu light" : "contenu dark"}>
             <Navbar/>
                 <div className="Home">
-                    <div class="btndiv">
-                        <button class="button">S'inscrire à un cours</button>
-                        <button class="button">Prendre un abonnement</button>
+                    <div className="homeContent">
+                        <div class="btndiv">
+                            <button class="button" onClick={() => history.push('/planning')}>Consulter planning</button>
+                            <button class="button" onClick={() => history.push('/abonnement')}>Prendre un abonnement</button>
+                        </div>
                     </div>
-                </div>
+                
 
                 <div className="CoachHome">
                     <h1>Tennis Team</h1>
@@ -35,7 +42,7 @@ const Home = () => {
                             <h2>NOM Prenom</h2>
                         </div> 
                     </div>
-                    <p>Plus de details</p>
+                    <NavLink exact to = "/coach">Plus de details</NavLink> 
                 </div>
                 
                 <div className="planningHome">
@@ -50,14 +57,14 @@ const Home = () => {
                             <p>--Le prochain evenement--</p>
                         </div>
                     </div>
-                    <p className="plus">Plus de details</p>
+                    <NavLink exact to = "/coach">Plus de details</NavLink>
                 </div>
-
+                </div>
             <Footer />
                 {/* <Banner />
                 <Info />
                 <Coach /> */}
-        </>
+        </div>
     );
 };
 
