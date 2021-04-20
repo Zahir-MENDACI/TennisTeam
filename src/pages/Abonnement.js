@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import logo from '../images/lo.png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { ThemeContext } from '../config/Context/ThemeContext';
 
 
 function Abonnement() {
+    const {theme} = useContext(ThemeContext) 
     return (
-            <>
+            <div className={theme ? "contenu light" : "contenu dark"}>
                 <Navbar/>
                 <div class="Abonnement">
                     {/* <img src={logo} className="imgAb"/> */}
@@ -59,7 +61,7 @@ function Abonnement() {
                         
                 </div>
                 <Footer />
-            </>
+            </div>
     )
 }
 

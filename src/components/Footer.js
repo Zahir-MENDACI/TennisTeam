@@ -34,7 +34,14 @@ function Footer() {
         }
         else
         {
-            
+            e.preventDefault();
+            emailjs.send('default_service', 'template_litngjt', {contact})
+            .then((result) => {
+                console.log(result.text);
+                alert('email envoyé')
+            }, (error) => {
+                console.log(error.text);
+            });
         }
     }
 
@@ -55,13 +62,13 @@ function Footer() {
                     <h5> Email: </h5>
                     tennis.team.ynov@gmail.com
                 </div>
-                <div onSubmit={envoi} class="form">
+                <div class="form">
                     <h2>Contact</h2>
                     <input type="text" placeholder="Nom" name="nom" value={contact.nom} onChange={onChangeInput}></input>
                     <input type="text" placeholder="Prenom" name="prenom" value={contact.prenom} onChange={onChangeInput}></input>
                     <input type="email" placeholder="Email" name="email" value={contact.email} onChange={onChangeInput}></input>
                     <textarea type="text" placeholder="Message" name="message" value={contact.message} onChange={onChangeInput}></textarea>
-                    <button type="submit">Envoyer</button>
+                    <button onClick={envoi}>Envoyer</button>
                 </div>
         </div>
     )

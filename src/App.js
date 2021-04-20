@@ -13,6 +13,7 @@ import Intro from './pages/Intro';
 import Covid from './pages/Covid';
 import ThemeContextProvider from './config/Context/ThemeContext';
 import { useState } from 'react';
+import PrivateRoute from './config/router/privateRoute';
 
 const App = () => {
 
@@ -26,7 +27,7 @@ const App = () => {
           <Route path="/accueil" exact component={Home} />
           <Route path="/abonnement" exact component={Abonnement} />
           <Route path="/coach" exact component={Coach} />
-          <Route path="/connexion" exact component={Connexion} />
+          <PrivateRoute path="/connexion" exact component={Connexion} />
           <Route path="/planning" exact component={Planning} />
           <Route path="/covid" exact component={Covid} />
         </Switch>

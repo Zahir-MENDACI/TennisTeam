@@ -119,14 +119,25 @@
                     height: 150px;
                     border-radius: 50%;
                     box-shadow: 0px 5px 10px 0px rgba(99, 151, 160, 0.5);
+                    object-fit: cover;
                 } 
                 @media (max-width:800px)
                 {
                     width: 90%;
                 }
             }
+            &::before
+            {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 80%;
+                background-color: rgba(79, 148, 160, 0.3);
+                display: inline-block;
+            }
+            
         }
-        
+
         @media (max-width:800px)
         {
             padding: 5% 2%;
@@ -166,7 +177,7 @@
             position: absolute;
             height: 1px;
             width: 80%;
-            background-color: rgba(162, 232, 245, 0.3);
+            background-color: rgba(79, 148, 160, 0.3);
             display: inline-block;
         }
 
