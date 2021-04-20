@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ThemeContext } from '../config/Context/ThemeContext';
 import { loadStripe } from "@stripe/stripe-js";
-import { useAlert } from "react-alert";
 
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+
+const stripePromise = loadStripe("pk_test_51IiRkbDDFfj3QhqsP1AEp0zcFI4J7ipeTvxpsTem3yx3rcTht6ylucvMDsmjKJ6irUu7P9UO4d0EsEd0tg6prGgb00z9st0VCP");
 
 
 function Abonnement() {
@@ -17,20 +17,10 @@ function Abonnement() {
     const abonnement3 = {title: "Abonnement Etudiant", price: "8000"}
     const abonnement4 = {title: "Abonnement Senior", price: "18000"}
     const abonnement5 = {title: "Abonnement Association", price: "3000"}
-
-    const alert = useAlert();
     
     const ProductDisplay = ({ handleClick }) => (
         <div className={theme ? "contenu light" : "contenu dark"}>
         <Navbar/>
-
-        <button
-            onClick={() => {
-            alert.show("Oh look, an alert!");
-            }}
-        >
-            Show Alert
-        </button>
         <div className="Abonnement">
             {/* <img src={logo} className="imgAb"/> */}
             <div className="cardsContainer">
