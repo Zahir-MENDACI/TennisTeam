@@ -14,12 +14,19 @@ import Covid from './pages/Covid';
 import ThemeContextProvider from './config/Context/ThemeContext';
 import { useState } from 'react';
 import PrivateRoute from './config/router/privateRoute';
+import Checkout from './pages/Checkout';
+import { positions, Provider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 
 const App = () => {
 
   const [theme, setTheme] = useState("light")
-
+  const options = {
+    timeout: 5000,
+    position: positions.BOTTOM_CENTER
+  };
   return (
+<Provider template={AlertTemplate} {...options}>
     <ThemeContextProvider>
       <BrowserRouter>
         <Switch>
@@ -30,10 +37,11 @@ const App = () => {
           <PrivateRoute path="/connexion" exact component={Connexion} />
           <Route path="/planning" exact component={Planning} />
           <Route path="/covid" exact component={Covid} />
+          <Route path="/checkout" exact component={Checkout} />
         </Switch>
       </BrowserRouter>
     </ThemeContextProvider>
-
+    </Provider>
     // <div className="App">
       
     //   <Navbar />
