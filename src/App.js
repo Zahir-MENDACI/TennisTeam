@@ -22,8 +22,9 @@ const App = () => {
 
   const [theme, setTheme] = useState("light")
   const options = {
+    offset: '100px',
     timeout: 5000,
-    position: positions.BOTTOM_CENTER
+    position: positions.TOP_RIGHT
   };
   return (
 <Provider template={AlertTemplate} {...options}>

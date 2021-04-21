@@ -13,10 +13,11 @@ import signin from "../images/Sign-in-img.svg";
 import PersonIcon from "@material-ui/icons/Person";
 import LockIcon from "@material-ui/icons/Lock";
 import EmailIcon from "@material-ui/icons/Email";
+import { useAlert } from "react-alert";
 
 const Connexion = () => {
   const { theme } = useContext(ThemeContext);
-
+  const alert = useAlert();
   const history = useHistory()
 
   // buttons that allow us to change between the login and registration forms
@@ -49,10 +50,10 @@ const Connexion = () => {
         { ...user }
       );
       localStorage.setItem("Authentification", JSON.stringify(response.data));
-      window.location.href = "/";
-      alert("you have been loged successfully!");
+      window.location.href = "/accueil";
+      alert.success("Connecté!")
     } catch (err) {
-      alert(err);
+      alert.error(err.toString())
     }
   };
 
@@ -64,9 +65,9 @@ const Connexion = () => {
       });
       localStorage.setItem("Authentification", JSON.stringify(response.data));
       history.push('/connexion') 
-      alert("you have been registered successfully!");
+      alert.success("Inscription réussie!")
     } catch (err) {
-      alert(err);
+      alert.error(err.toString())
     }
   };
 
