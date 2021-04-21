@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 // Components
 import Navbar from "../components/Navbar";
@@ -15,6 +16,8 @@ import EmailIcon from "@material-ui/icons/Email";
 
 const Connexion = () => {
   const { theme } = useContext(ThemeContext);
+
+  const history = useHistory()
 
   // buttons that allow us to change between the login and registration forms
   const sign_up_btn_clicked = () => {
@@ -42,7 +45,7 @@ const Connexion = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/users/login",
+        "https://tennisteam-backend.herokuapp.com/api/v1/users/login",
         { ...user }
       );
       localStorage.setItem("Authentification", JSON.stringify(response.data));
@@ -56,11 +59,11 @@ const Connexion = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/users", {
+      const response = await axios.post("https://tennisteam-backend.herokuapp.com/api/v1/users", {
         ...user,
       });
       localStorage.setItem("Authentification", JSON.stringify(response.data));
-      window.location.href = "http://localhost:3000/Connexion";
+      history.push('/connexion') 
       alert("you have been registered successfully!");
     } catch (err) {
       alert(err);

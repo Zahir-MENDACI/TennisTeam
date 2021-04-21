@@ -108,7 +108,7 @@ function Abonnement() {
   const handleClick = async (data) => {
       console.log(requestOptions(data))
     const stripe = await stripePromise;
-    const response = await fetch("http://localhost:8080/api/v1/create-checkout-session", requestOptions(data));
+    const response = await fetch("https://tennisteam-backend.herokuapp.com/api/v1/create-checkout-session", requestOptions(data));
     const session = await response.json();
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
