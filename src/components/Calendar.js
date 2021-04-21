@@ -145,7 +145,7 @@ const Calendar = () => {
                                 {console.log(jour.getDate() + '-' + (Number(jour.getMonth())+1) +'-' + jour.getFullYear())}
                             </div>
 
-                            <p className="text">aaaaa</p>
+                            <p className="text">Infos evenement</p>
 
                             <div className="button return" onClick={handleInfo}>
                                 Retourner sur la page
