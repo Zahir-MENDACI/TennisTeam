@@ -77,7 +77,7 @@ const Home = (props) => {
                             <p>--Le prochain evenement--</p>
                         </div>
                     </div>
-                    <NavLink exact to = "/coach">Plus de details</NavLink>
+                    <NavLink exact to = "/planning">Plus de details</NavLink>
                 </div>
                 </div>
             <Footer />
